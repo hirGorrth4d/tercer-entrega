@@ -46,7 +46,9 @@ const notifyNewOrderByWapp = async (orderData) => {
     return response
 }
 
-export const NotificationService = { 
+const NotificationService = { 
     notifyNewOrderByWapp,
     notifyNewUserByEmail,
 }
+
+module.exports  = NotificationService

@@ -44,7 +44,7 @@ const createOrder = async (req,res) => {
     });
 };
 
-export default {
+module.exports  = {
     getCart,
     addProduct,
     deleteProduct,

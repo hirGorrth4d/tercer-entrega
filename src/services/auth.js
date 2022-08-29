@@ -1,5 +1,5 @@
 const passport = require('passport');
-const {LocalStrategy} = require('passport-local');
+const LocalStrategy = require('passport-local');
 const {UserModel} = require('../models/users');
 
 
@@ -74,8 +74,8 @@ const signup = async ( req, username, password, done) => {
     };
 }
 
-export const loginF = new LocalStrategy(strategyOptions, login)
-export const signupF = new LocalStrategy(strategyOptions, signup)
+const loginF = new LocalStrategy(strategyOptions, login)
+const signupF = new LocalStrategy(strategyOptions, signup)
 
 //serializar
 
@@ -89,3 +89,7 @@ passport.deserializeUser((userId, done)=>{
         return done(null, user)
     })
 })
+
+module.exports = {
+    loginF, signupF
+}

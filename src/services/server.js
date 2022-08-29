@@ -48,4 +48,4 @@ app.use((err, req, res, next) => {
     res.status(status).send({msg, stack})
 })
 
-export default app
+module.exports = app;

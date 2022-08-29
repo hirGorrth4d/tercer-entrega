@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-export const categoryCollectionName = 'category';
+const categoryCollectionName = 'category';
 
 const categorySchema = new mongoose.Schema(
     {
@@ -10,6 +10,8 @@ const categorySchema = new mongoose.Schema(
     {versionKey: false, timestamps: true},
 );
 
-export const CategoryModel = mongoose.model(
+const CategoryModel = mongoose.model(
     categoryCollectionName, categorySchema,
 );
+
+module.exports  ={categoryCollectionName,CategoryModel }

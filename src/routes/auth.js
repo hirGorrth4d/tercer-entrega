@@ -39,4 +39,4 @@ router.post('/logout', (req,res) => {
     res.json({message: 'goodbye!'});
 })
 
-export default router;
+module.exports  = router;

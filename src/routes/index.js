@@ -17,4 +17,4 @@ router.use('/categories', CategoryRouter)
 router.use('/products', ProductRouter)
 router.use('/cart', isLoggedIn, CartRouter)
 
-export default router
+module.exports  = router

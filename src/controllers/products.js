@@ -63,6 +63,6 @@ const deleteProduct = async (req,res) => {
     res.json({msg: 'producto borrado'})
 }
 
-export default {
+module.exports  = {
     getAllProducts, getProductById, createProduct, updateProduct, deleteProduct
 }

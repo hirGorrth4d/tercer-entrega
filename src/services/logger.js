@@ -3,12 +3,12 @@ const winston = require('winston');
 const Config = require('../config');
 
 const {createLogger, format, transports } = winston;
-const {combine, timestamps, prettyPrint} = format;
+const {combine, timestamp, prettyPrint} = format;
 const {Console, File} =transports;
 
 const logConf = {
     level: 'info',
-    format: combine(timestap(), prettyPrint()),
+    format: combine(timestamp(), prettyPrint()),
     transports: [new Console({level: 'info'})]
 }
 
@@ -30,4 +30,4 @@ if (Config.NODE_ENV !== 'development') {
 }
 
 
-export default logger
+module.exports =  logger

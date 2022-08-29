@@ -1,8 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-export default {
-
+const Config = {
+    NODE_ENV: process.env.NODE_ENV || 'development',
     PORT: process.env.PORT || 5000,
     MONGO_ATLAS_URL: process.env.MONGO_ATLAS_SRV || 'mongoSRV',
     MONGO_LOCAL_SRV: process.env.MONGO_LOCAL_SRV,
@@ -15,3 +15,5 @@ export default {
     TWILIO_WSP_PHONE: process.env.TWILIO_WSP_PHONE || '+123456789',
     ADMIN_PHONE: process.env.ADMIN_PHONE || '+5491112345678'
 }
+
+module.exports = Config

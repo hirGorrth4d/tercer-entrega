@@ -12,4 +12,4 @@ router.put('/:id', Handler(ProductController.updateProduct()))
 router.delete('/:id', Handler(ProductController.deleteProduct()))
 
 
-export default router
+module.exports  = router

@@ -1,13 +1,13 @@
-const {Mongoose} = require('mongoose');
+const mongoose = require('mongoose');
 const { productsCollectionName} = require('./products');
 const {userCollectionName} = require('./users');
 
-export const cartCollectionName = 'cart';
+const cartCollectionName = 'cart';
 
-const productItem = new Mongoose.Schema(
+const productItem = new mongoose.Schema(
     {
         productId: {
-            type: Mongoose.Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: productsCollectionName,
             required: true,
         },
@@ -15,10 +15,10 @@ const productItem = new Mongoose.Schema(
     },
     {_id: false},
 );
-const cartSchema = new Mongoose.Schema(
+const cartSchema = new mongoose.Schema(
     {
         userId: {
-            type: Mongoose.Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: userCollectionName,
             required: true,
         },
@@ -27,4 +27,5 @@ const cartSchema = new Mongoose.Schema(
     {versionKey: false, timestamps: true},
 )
 
-export const CartModel = Mongoose.model(cartCollectionName, cartSchema)
+const CartModel = mongoose.model(cartCollectionName, cartSchema)
+module.exports  = {cartCollectionName, CartModel}

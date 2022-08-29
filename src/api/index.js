@@ -4,4 +4,5 @@ const CartApi = require('./carts');
 const ProductsApi = require('./products');
 const {ErrorStatus, ApiError} = require('./error');
 
-export { CategoryApi, UserApi, CartApi, ProductsApi, ErrorStatus, ApiError}
+
+module.exports = { CategoryApi, UserApi, CartApi, ProductsApi, ErrorStatus, ApiError}

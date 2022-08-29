@@ -3,6 +3,6 @@ const {UserModel} = require('./users');
 const {ProductModel} = require('./products');
 const {CategoryModel} = require('./categories');
 
-export {CartModel, UserModel, ProductModel, CategoryModel};
+module.exports  ={CartModel, UserModel, ProductModel, CategoryModel};
 
 

@@ -25,6 +25,6 @@ const remove = (id) => {
     UserModel.findByIdAndDelete(id)
 }
 
-export default {
+module.exports  = {
     find, findByEmail, create, update, remove
 }

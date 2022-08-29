@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const {categoryCollectionName} = require('./categories');
 
-export const productsCollectionName = 'product';
+const productsCollectionName = 'product';
 
 const productSchema = new mongoose.Schema(
     {
         name: { type: String, required: true},
         description: {type: String, required: true},
         price: {type: Number, required: true},
-        stock: {type: Numer, required: true},
+        stock: {type: Number, required: true},
         categoryId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: categoryCollectionName,
@@ -18,6 +18,8 @@ const productSchema = new mongoose.Schema(
     {versionKey: false, timestamps: true},
 )
 
-export const ProductModel = mongoose.model(
+const ProductModel = mongoose.model(
     productsCollectionName, productSchema,
 );
+
+module.exports  = {productsCollectionName, ProductModel}

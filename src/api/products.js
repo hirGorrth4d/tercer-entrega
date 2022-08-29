@@ -33,6 +33,6 @@ const removeStock = async (id, stock) => {
     await product.save()
 };
 
-export default {
+module.exports  ={
     find, create, update, findByCategory, removeStock, remove, addStock
 }

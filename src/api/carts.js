@@ -91,7 +91,7 @@ const createOrder = async (cartId) => {
 
 }
 
-export default {
+module.exports  ={
     create, 
     addProduct,
     deleteProducts,

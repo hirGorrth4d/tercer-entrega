@@ -33,6 +33,6 @@ const remove = async (id) => {
 
 }
 
-export default {
+module.exports  ={
     find, create, update, remove
 };

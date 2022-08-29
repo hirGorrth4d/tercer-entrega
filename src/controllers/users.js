@@ -2,21 +2,21 @@ const Logger = require('../services/logger');
 
 const {UserApi, CartApi} = require('../api');
 
-export const validateNewUser = (newUser) => {
+const validateNewUser = (newUser) => {
     return (!newUser || !newUser.firstName || !newUser.lastName || !newUser.age || !newUser.address || !newUser.address.street || !newUser.address.city)
 }
 
-export const getUserByEmail = (email) => {
+const getUserByEmail = (email) => {
     UserApi.findByEmail(email)
 }
 
-export const createUser = async (userData) => {
+const createUser = async (userData) => {
     const newUser = await UserApi.create(userData)
     await CartApi.create(newUser._id);
     return newUser;
 }
 
-export const isLoggedIn = (req,res,done) =>{
+const isLoggedIn = (req,res,done) =>{
     Logger.info('is Authenticated');
     Logger.info(req.isAuthenticated());
     Logger.info('req.user');
@@ -27,7 +27,7 @@ export const isLoggedIn = (req,res,done) =>{
     done()
 }
 
-export const isAdmin = (req,res,done) => {
+const isAdmin = (req,res,done) => {
     Logger.info('Admin middleware');
     Logger.info(req.user);
 
@@ -36,4 +36,8 @@ export const isAdmin = (req,res,done) => {
     }
 
     done()
+}
+
+module.exports = {
+    isAdmin, isLoggedIn, createUser, getUserByEmail, validateNewUser
 }
