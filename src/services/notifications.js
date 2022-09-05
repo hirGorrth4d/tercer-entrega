@@ -12,12 +12,12 @@ const propietario = {
 }
 
 const gmailtransporter = nodemailer.createTransport({
-    service: 'gmail',
-    port: 587,
+    service: 'smtp.gmail.com',
+    port: 465,
     secure: true,
     auth: {
-        user:  propietario.address,
-        pass: Config.GMAIL_PASS,
+        user:  Config.GMAIL_EMAIL,
+        pass: Config.GMAIL_PASSWORD,
     }
 })
 
@@ -25,7 +25,7 @@ const notifyNewUserByEmail = async (userData) =>{
     const mailOptions = {
 
         from: propietario,
-        to: propietario.address,
+        to: Config.GMAIL_EMAIL,
         subject: 'nuevo usuario registrado',
         html: `Nuevo usuario creado ${userData}`
     };

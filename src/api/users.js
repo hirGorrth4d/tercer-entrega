@@ -7,7 +7,7 @@ const find = (id) => {
     return UserModel.find()
 }
 const findByEmail = (email) => {
-    UserModel.findOne({email})
+    UserModel.findOne({email: email})
 
 }
 

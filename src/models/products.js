@@ -12,7 +12,7 @@ const productSchema = new mongoose.Schema(
         categoryId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: categoryCollectionName,
-            required: true,
+            required: false,
         },
     },
     {versionKey: false, timestamps: true},

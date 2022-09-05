@@ -1,6 +1,7 @@
 const Logger = require('../services/logger');
 
-const {UserApi, CartApi} = require('../api');
+const UserApi = require('../api/users');
+const CartApi = require('../api/carts');
 
 const validateNewUser = (newUser) => {
     return (!newUser || !newUser.firstName || !newUser.lastName || !newUser.age || !newUser.address || !newUser.address.street || !newUser.address.city)
@@ -11,8 +12,9 @@ const getUserByEmail = (email) => {
 }
 
 const createUser = async (userData) => {
-    const newUser = await UserApi.create(userData)
-    await CartApi.create(newUser._id);
+
+    const newUser = UserApi.create(userData)
+    // await CartApi.create(newUser._id);
     return newUser;
 }
 

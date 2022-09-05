@@ -1,10 +1,12 @@
-const {ProductsApi} = require('../api');
-
+const ProductsApi = require('../api/products');
 const getAllProducts = async (req,res) => {
-    const products = await ProductsApi.find()
-    res.json({
-        data: products
-    })
+    try {
+        const products =  await ProductsApi.find()
+        
+        res.send(products)
+    } catch (err) {
+        throw err
+    };
 }
 
 
@@ -19,7 +21,7 @@ const getProductById = async (req,res) => {
 }
 const createProduct = async (req,res) => {
     const {name, description, stock, price, categoryId} =req.body;
-    if (!name || !description || !stock || !price || !categoryId) {
+    if (!name || !description || !stock || !price) {
         return res.status(400).json({msg: 'Datos invalidos'});
     }
 
@@ -37,7 +39,7 @@ const updateProduct = async (req,res) => {
     const {id} = req.params;
     const {name,description, stock, price, categoryId} = req.body;
 
-    if (!name&&!description && !stock && !price && !categoryId) {
+    if (!name&&!description && !stock && !price) {
         return res.status(400).json({msg: 'datos invalidos'});
     }
 
@@ -52,6 +54,7 @@ const updateProduct = async (req,res) => {
         data: productUpdated
     })
 }
+
 const deleteProduct = async (req,res) => {
     const {id} = req.params;
     const product = await ProductsApi.find(id);

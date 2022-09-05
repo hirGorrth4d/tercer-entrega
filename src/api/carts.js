@@ -1,6 +1,7 @@
 const {CartModel} = require('../models');
 const{ NotificationService} = require('../services/notifications');
-const {ProductsApi, ApiError, ErrorStatus }= require('./index');
+const {ApiError, ErrorStatus} = require('../api/error');
+const ProductsApi = require('../api/products');
 
 const create = (userId) => CartModel.create({userId})
 

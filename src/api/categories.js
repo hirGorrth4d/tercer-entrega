@@ -1,5 +1,6 @@
 const {CategoryModel} = require('../models');
-const {ProductsApi, ApiError, ErrorStatus} = require('./index');
+const {ProductsApi} = require('./products');
+const {ApiError, ErrorStatus} = require('./error');
 
 const find = (id) => {
     if (id) {

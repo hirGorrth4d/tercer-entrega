@@ -6,7 +6,7 @@ const {UserModel} = require('../models/users');
 const {validateNewUser, getUserByEmail, createUser} = require('../controllers/users');
 
 const Logger = require('./logger');
-const {NotificationService} = require('./notifications');
+const NotificationService = require('./notifications');
 
 
 const strategyOptions = {
@@ -14,27 +14,6 @@ const strategyOptions = {
     passwordField: 'password',
     passReqToCallback: true,
 }
-
-
-const login = async ( req, username, password, done) => {
-    Logger.info('Login');
-    const user= await getUserByEmail(username);
-
-    if (!user) {
-        return done(null, false, {message: 'Username/ Password incorrecta'})
-    }
-
-    const isValidPassword = await user.isValidPassword(password)
-
-
-    if (!isValidPassword) {
-        return done(null, false, {message: 'Username / Password Incorrecta'})
-    }
-
-    Logger.info('Info correcta')
-    return done (null, user);
-}
-
 const signup = async ( req, username, password, done) => {
     try {
         Logger.info('Ingreso')
@@ -48,12 +27,14 @@ const signup = async ( req, username, password, done) => {
 
         }
 
-        const user = await getUserByEmail(username)
+        const user = getUserByEmail(username)
 
         if (user) {
             Logger.error('El usuario ya existe')
             return done( null, false, {message: 'El usuario ya existe'})
         } else {
+
+
             const userData = {
                 email: username,
                 password,
@@ -64,21 +45,41 @@ const signup = async ( req, username, password, done) => {
                 address
             }
             const newUser = await createUser(userData)
-            await NotificationService.notifyNewUserByEmail(newUser)
+            // await NotificationService.notifyNewUserByEmail(newUser)
             return done( null, newUser)
-        
+            
         }
 
     } catch (err) {
-        done( err)
+        throw ( err)
     };
 }
+
+
+const login = async ( req, username, password, done) => {
+    Logger.info('Login');
+    const user= await getUserByEmail(username);
+    
+    if (!user) {
+        return done(null, false, {message: 'Username/ Password incorrecta'})
+    }
+    
+    const isValidPassword = await user.isValidPassword(password)
+    
+    
+    if (!isValidPassword) {
+        return done(null, false, {message: 'Username / Password Incorrecta'})
+    }
+
+    Logger.info('Info correcta')
+    return done (null, user);
+}
+
 
 const loginF = new LocalStrategy(strategyOptions, login)
 const signupF = new LocalStrategy(strategyOptions, signup)
 
 //serializar
-
 passport.serializeUser((user,done) =>{
     Logger.info('Se ejecuta funcion')
     done(null, user._id)
@@ -89,6 +90,7 @@ passport.deserializeUser((userId, done)=>{
         return done(null, user)
     })
 })
+
 
 module.exports = {
     loginF, signupF

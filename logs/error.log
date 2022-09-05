@@ -1,0 +1,126 @@
+{
+  errors: {
+    categoryId: ValidatorError: Path `categoryId` is required.
+        at validate (D:\docs\Coder-Backend\tercera-entrega\node_modules\mongoose\lib\schematype.js:1337:13)
+        at ObjectId.SchemaType.doValidate (D:\docs\Coder-Backend\tercera-entrega\node_modules\mongoose\lib\schematype.js:1321:7)
+        at D:\docs\Coder-Backend\tercera-entrega\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (internal/process/task_queues.js:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'Path `categoryId` is required.',
+        type: 'required',
+        path: 'categoryId',
+        value: undefined
+      },
+      kind: 'required',
+      path: 'categoryId',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'product validation failed',
+  level: 'error',
+  timestamp: '2022-09-05T14:36:30.938Z'
+}
+{ level: 'error', timestamp: '2022-09-05T14:43:09.406Z' }
+{ level: 'error', timestamp: '2022-09-05T14:45:40.933Z' }
+{ level: 'error', timestamp: '2022-09-05T15:43:10.712Z' }
+{ level: 'error', timestamp: '2022-09-05T15:49:05.869Z' }
+{ level: 'error', timestamp: '2022-09-05T15:59:24.698Z' }
+{ level: 'error', timestamp: '2022-09-05T16:25:58.421Z' }
+{ level: 'error', timestamp: '2022-09-05T16:27:15.743Z' }
+{ level: 'error', timestamp: '2022-09-05T16:28:00.147Z' }
+{ level: 'error', timestamp: '2022-09-05T16:28:59.689Z' }
+{
+  errors: {
+    userId: ValidatorError: Path `userId` is required.
+        at validate (D:\docs\Coder-Backend\tercera-entrega\node_modules\mongoose\lib\schematype.js:1337:13)
+        at ObjectId.SchemaType.doValidate (D:\docs\Coder-Backend\tercera-entrega\node_modules\mongoose\lib\schematype.js:1321:7)
+        at D:\docs\Coder-Backend\tercera-entrega\node_modules\mongoose\lib\document.js:2831:18
+        at processTicksAndRejections (internal/process/task_queues.js:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'Path `userId` is required.',
+        type: 'required',
+        path: 'userId',
+        value: undefined
+      },
+      kind: 'required',
+      path: 'userId',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'cart validation failed',
+  level: 'error',
+  timestamp: '2022-09-05T16:30:01.438Z'
+}
+{ level: 'error', timestamp: '2022-09-05T16:30:38.757Z' }
+{ level: 'error', timestamp: '2022-09-05T16:31:06.298Z' }
+{ level: 'error', timestamp: '2022-09-05T16:31:22.143Z' }
+{ level: 'error', timestamp: '2022-09-05T16:39:34.731Z' }
+{ level: 'error', timestamp: '2022-09-05T16:41:46.187Z' }
+{ level: 'error', timestamp: '2022-09-05T16:42:52.296Z' }
+{ level: 'error', timestamp: '2022-09-05T16:48:02.587Z' }
+{
+  code: 'EAUTH',
+  command: 'API',
+  level: 'error',
+  timestamp: '2022-09-05T16:48:53.648Z'
+}
+{
+  errno: -4078,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 587,
+  command: 'CONN',
+  level: 'error',
+  timestamp: '2022-09-05T16:50:32.908Z'
+}
+{
+  errno: -4078,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 486,
+  command: 'CONN',
+  level: 'error',
+  timestamp: '2022-09-05T16:52:28.653Z'
+}
+{
+  errno: -4078,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 465,
+  command: 'CONN',
+  level: 'error',
+  timestamp: '2022-09-05T16:53:26.737Z'
+}
+{
+  errno: -4078,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 465,
+  command: 'CONN',
+  level: 'error',
+  timestamp: '2022-09-05T16:55:23.615Z'
+}
+{ level: 'error', timestamp: '2022-09-05T17:56:27.645Z' }
+{ level: 'error', timestamp: '2022-09-05T18:06:57.691Z' }
+{ level: 'error', timestamp: '2022-09-05T18:10:11.295Z' }
+{ level: 'error', timestamp: '2022-09-05T18:10:33.786Z' }
+{ level: 'error', timestamp: '2022-09-05T18:13:21.559Z' }
+{ level: 'error', timestamp: '2022-09-05T18:15:21.510Z' }
+{ level: 'error', timestamp: '2022-09-05T18:17:26.475Z' }
+{ level: 'error', timestamp: '2022-09-05T18:18:04.224Z' }
+{ level: 'error', timestamp: '2022-09-05T18:19:42.677Z' }
+{ level: 'error', timestamp: '2022-09-05T18:20:09.586Z' }
+{ level: 'error', timestamp: '2022-09-05T18:21:18.145Z' }
+{ level: 'error', timestamp: '2022-09-05T18:30:45.594Z' }
+{ level: 'error', timestamp: '2022-09-05T18:36:44.973Z' }
+{ level: 'error', timestamp: '2022-09-05T18:42:22.944Z' }

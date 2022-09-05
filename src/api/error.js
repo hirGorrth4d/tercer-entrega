@@ -11,4 +11,4 @@ class ApiError extends Error {
     }
 }
 
-module.exports  = {ErrorStatus, ApiError}
+module.exports = {ApiError, ErrorStatus}

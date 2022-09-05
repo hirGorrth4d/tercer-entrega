@@ -1,4 +1,4 @@
-const {CategoryApi} = require('../api');
+const {CategoryApi} = require('../api/categories');
 
 const getAllCategories = async (req,res) => {
     const categories = await CategoryApi.find();
